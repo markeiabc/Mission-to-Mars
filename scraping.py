@@ -4,13 +4,14 @@ from bs4 import BeautifulSoup as soup
 import pandas as pd
 import datetime as dt
 
-# Set the executable path and initialize the chrome browser in splinter
-executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-browser = Browser('chrome', **executable_path)
-
 def scrape_all():
+# Set the executable path and initialize the chrome browser in splinter
+    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
+    browser = Browser('chrome', **executable_path)
+
+
     # Initiate headless driver for deployment
-    browser = Browser("chrome", executable_path="chromedriver", headless=True)
+    # browser = Browser("chrome", executable_path="chromedriver", headless=True)
 
     news_title, news_paragraph = mars_news(browser)
 
